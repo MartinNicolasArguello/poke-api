@@ -1,0 +1,112 @@
+* {
+    font-family: 'Pixelify Sans';
+    font-size: 16px;
+}
+
+body {
+    padding-top: 72px;
+}
+
+
+.dropdown-menu {
+    width: 300px !important;
+}
+
+.nav-item.dropdown {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.btn.btn-warning {
+    margin-left: 20px;
+}
+
+.navbar.fixed-bottom {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+
+    .btn {
+        font-size: large;
+        margin: 20px;
+        width: 200px;
+    }
+}
+
+.card {
+    margin: 12px;
+    border: 1px solid black;
+    border-radius: 5%;
+    box-shadow: 5px 10px #888888;
+    transition: transform 450ms;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card img {
+    margin-top: 10px;
+    border: 1px solid #888888;
+    border-radius: 3%;
+    background-image: url(../card-background.jpg);
+    background-size: cover;
+}
+
+.card:hover {
+    transition: transform 125ms;
+    transform: translateY(-10px);
+}
+
+.edit-form {
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 5%;
+    box-shadow: 5px 10px #888888;
+    height: 390px;
+    width: 400px;
+}
+
+.creation-form {
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 5%;
+    box-shadow: 5px 10px #888888;
+    height: 430px;
+    width: 400px;
+}
+
+.img-container {
+    height: 200px;
+    width: 190px;
+}
+
+.card-image {
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.dropdown-nav-div {
+    display: flex;
+}
+
+.navbar-dropdown-button {
+    width: fit-content !important;
+    padding-left: 30% !important;
+    padding-right: 30% !important;
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+}
+
+.card-button {
+    padding-top: 4px !important;
+    padding-bottom: 4px !important;
+    margin-top: 4px !important;
+    margin-bottom: 4px !important;
+}
+
+@media only screen and (max-width: 991px) {
+    #tittle {
+        display: none;
+    }
+}

@@ -1,0 +1,30 @@
+{% extends "base.html" %} {% block title %} ADD NEW POKEMON {% endblock%}
+{% block content %}
+<div class="d-flex align-items-center justify-content-center" role="alert">
+    <div class="creation-form">
+        <form method="POST" action="/add-pokemon">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="name" class="form-control" name="name">
+            </div>
+            <div class="mb-3">
+                <label for="type" class="form-label">Type</label>
+                <input type="type" class="form-control" name="type">
+            </div>
+            <div class="mb-3">
+                <label for="height" class="form-label">Height</label>
+                <input type="height" class="form-control" name="height">
+            </div>
+            <div class="mb-3">
+                <label for="weight" class="form-label">Weight</label>
+                <input type="weight" class="form-control" name="weight">
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg btn-block">ADD POKEMON</button>
+
+        </form>
+
+    </div>
+
+</div>
+
+{% endblock %}

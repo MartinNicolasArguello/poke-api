@@ -1,0 +1,39 @@
+{% extends "base.html" %} {% block title %} Pokemon {% endblock%}
+{% block content %}
+
+<div class="d-flex p-2 flex-wrap">
+    {% for result in data %}
+    <div class="card" style="width: 14rem; height: 28rem;">
+        <div class="img-container">
+            <img class="card-image" src={{result["image"]}} alt="...">
+        </div>
+        <div>
+            <h2>{{result["name"].capitalize()}}</h2>
+            <h5>Type: {{result["types"]}}</h5>
+            <h5>Height: {{result["height"]}} cm</h5>
+            <h5>Weight: {{result["weight"]}} kg</h5>
+            <a role="button" class="btn btn-primary btn-lg btn-block card-button" href={{"/edit-pokemon/" +
+                (result["name"].lower()) }}>EDIT
+                POKEMON</a>
+            <form method="POST" action={{"/delete-pokemon/" + (result["name"].lower())}}> <button type="submit"
+                    class="btn btn-danger btn-lg btn-block card-button">DELETE POKEMON</button></form>
+
+        </div>
+    </div>
+
+    {% endfor %}
+
+</div>
+{% endblock %}
+{% block footer %}
+{% if previous != "None" %}
+<a role="button" class="btn btn-secondary" href={{"/pokemon/" + previous}}>Prev</a>
+{% else %}
+<a role="button" class="btn btn-secondary disabled" aria-disabled="true">Prev</a>
+{% endif %}
+{% if next != "None" %}
+<a role="button" class="btn btn-secondary" href={{"/pokemon/" + next }}>Next</a>
+{% else %}
+<a role="button" class="btn btn-secondary disabled" disabled>Next</a>
+{% endif %}
+{% endblock %}

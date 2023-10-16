@@ -1,0 +1,51 @@
+{% extends "base.html" %} {% block title %} ADD NEW POKEMON {% endblock%}
+{% block content %}
+<div class="d-flex p-2 m-2 justify-content-around">
+    <!-- <div class="card m-2" style="width: 18rem;">
+        <img src={{image}} class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{name.capitalize()}}</h5>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Type: {{type}}</li>
+                <li class="list-group-item">Height: {{height}}</li>
+                <li class="list-group-item">Weight: {{weight}}</li>
+            </ul>
+        </div>
+    </div> -->
+
+    <div class="card" style="width: 14rem; height: 24rem;">
+        <div class="img-container">
+            <img class="card-image" src={{image}} alt="...">
+        </div>
+        <div>
+            <h2>{{name.capitalize()}}</h2>
+            <h5>Type: {{type}}</h5>
+            <h5>Height: {{height}} cm</h5>
+            <h5>Weight: {{weight}} kg</h5>
+
+        </div>
+    </div>
+
+
+
+    <div class="edit-form">
+        <form method="POST" action="{{" /edit-pokemon/" + name.lower()}}">
+
+            <div class="mb-3">
+                <label for="type" class="form-label">NEW Type</label>
+                <input type="type" class="form-control" name="type">
+            </div>
+            <div class="mb-3">
+                <label for="height" class="form-label">NEW Height</label>
+                <input type="height" class="form-control" name="height">
+            </div>
+            <div class="mb-3">
+                <label for="weight" class="form-label">NEW Weight</label>
+                <input type="weight" class="form-control" name="weight">
+            </div>
+            <button type="submit" class="btn btn-secondary btn-lg btn-block">EDIT POKEMON</button>
+
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "base.html" %} {% block title %} Item {% endblock%}
+{% block content %}
+
+<div class="d-flex p-2 flex-wrap">
+    {% for result in data %}
+
+    <div class="card m-2" style="width: 12rem;">
+        <img src={{result["image"]}} class="card-img-top" style="width: 170px;" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{result["name"].capitalize()}}</h5>
+
+        </div>
+    </div>
+
+    {% endfor %}
+
+</div>
+
+{% block footer %}
+{% if previous != "None" %}
+<a role="button" class="btn btn-secondary" href={{"/item/" + previous}}>Prev</a>
+{% else %}
+<a role="button" class="btn btn-secondary disabled" aria-disabled="true">Prev</a>
+{% endif %}
+{% if next != "None" %}
+<a role="button" class="btn btn-secondary" href={{"/item/" + next }}>Next</a>
+{% else %}
+<a role="button" class="btn btn-secondary disabled" disabled>Next</a>
+{% endif %}
+{% endblock %}
+
+{% endblock %}
